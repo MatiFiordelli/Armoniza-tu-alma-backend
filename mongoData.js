@@ -1,7 +1,7 @@
 import  { MongoClient } from 'mongodb'
 
 export default async function GetData(){
-     const url = "mongodb+srv://matifiordelli:mat123@cluster0.2bgyfbp.mongodb.net/?retryWrites=true&w=majority"
+     const url = "mongodb+srv://vercel-admin-user:Nqa7PD2Tiu7D2GrF@cluster0.2bgyfbp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
      let mongoClient
      try {
