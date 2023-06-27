@@ -5,11 +5,10 @@ const app = express()
 const port = process.env.port
 const mainProducts = await GetData()
 
-/* app.get('/', (req, res)=>{
+app.get('/', (req, res)=>{
     res.send('Welcome')
-}) */
+}) 
 app.get('/main-products', (req, res)=>{
-    console.log(res)
     res.json(mainProducts)
 })
 
