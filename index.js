@@ -16,10 +16,10 @@ app.options('/main-products', cors({origin:'*'}), (req, res)=>{
     res.json(mainProducts)
 })
 
-app.get('/main-products', (req, res)=>{
+/* app.get('/main-products', (req, res)=>{
     res.set('Access-Control-Allow-Origin', '*')
     res.json(mainProducts)
-})
+}) */
 
-app.listen(port || 3001, ()=>console.log('server online'))
+app.listen(port || 3000, ()=>console.log('server online'))
 
