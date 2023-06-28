@@ -46,5 +46,5 @@ app.get('/main-products', cors({origin:'*'}), (req, res)=>{
     res.json(mainProducts)
 }) */
 
-app.listen(port || 3000, ()=>console.log('server online'))
+app.listen(port || 3001, ()=>console.log('server online'))
 
