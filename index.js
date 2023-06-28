@@ -12,7 +12,8 @@ app.get('/', (req, res)=>{
     res.send('Welcome')
 }) 
 
-app.get('/main-products', cors({origin:true}), (req, res)=>{
+app.get('/main-products', cors({origin:false}), (req, res)=>{
+    res.set('Access-Control-Allow-Origin', '*')
     res.json(mainProducts)
 })
 
