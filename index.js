@@ -1,9 +1,9 @@
 import express from 'express'
-/* import cors from 'cors' */
+import cors from 'cors'
 import GetData from './mongoData.js'
 
 const app = express()
-/* app.use(cors({origin: ['http://localhost:3000/']})) */
+app.use(cors({origin: '*'}))
 const port = process.env.port
 const mainProducts = await GetData()
 
