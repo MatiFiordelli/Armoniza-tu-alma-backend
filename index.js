@@ -15,12 +15,10 @@ app.options("/*", function(req, res, next){
   });
 
 app.get('/', (req, res)=>{
-    res.set('Access-Control-Allow-Origin', '*')
     res.send('Welcome')
 }) 
 
 app.get('/main-products', (req, res)=>{
-    res.set('Access-Control-Allow-Origin', '*')
     res.json(mainProducts)
 })
 
