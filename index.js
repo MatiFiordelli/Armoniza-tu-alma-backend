@@ -3,10 +3,10 @@ import cors from 'cors'
 import GetData from './mongoData.js'
 
 const app = express()
+app.use(cors({origin: ['http://localhost:3000/']}))
 const port = process.env.port
 const mainProducts = await GetData()
 
-app.use(cors({origin: '*'}))
 app.get('/', (req, res)=>{
     res.send('Welcome')
 }) 
