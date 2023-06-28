@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-/* import GetData from './mongoData.js' */
+import GetData from './mongoData.js'
 
 const app = express()
 app.use(()=>{
@@ -38,7 +38,7 @@ app.options("/*", function(req, res, next){
   });
 
 app.get('/main-products', cors({origin:'*'}), (req, res)=>{
-    res.json('mainProducts')
+    res.json(mainProducts)
 })
 
 /* app.get('/main-products', (req, res)=>{
