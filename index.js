@@ -16,11 +16,22 @@ app.get('/', (req, res)=>{
     res.send('Welcome')
 }) 
 
-app.get('/main-products', cors({origin:'*'}), (req, res)=>{
-    res.set('Access-Control-Allow-Origin', '*')
+app.use((req, res, next)=>{
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+
+    if ('OPTIONS' === req.method) {
+        //respond with 200
+        res.send(200);
+      }
+      else {
+      //move on
+        next();
+      }
+})
+
+app.get('/main-products', cors({origin:'*'}), (req, res)=>{
     res.json(mainProducts)
 })
 
