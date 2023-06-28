@@ -6,7 +6,7 @@ const app = express()
 const port = process.env.port
 const mainProducts = await GetData()
 
-app.use(cors())
+app.use(cors({origin: '*'}))
 app.get('/', (req, res)=>{
     res.send('Welcome')
 }) 
