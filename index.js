@@ -3,7 +3,11 @@ import cors from 'cors'
 import GetData from './mongoData.js'
 
 const app = express()
-app.use(cors({origin: '*'}))
+app.use(()=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+})
 const port = process.env.port
 const mainProducts = await GetData()
 
@@ -12,7 +16,7 @@ app.get('/', (req, res)=>{
     res.send('Welcome')
 }) 
 
-app.get('/main-products', cors({origin:false}), (req, res)=>{
+app.get('/main-products', cors({origin:'*'}), (req, res)=>{
     res.set('Access-Control-Allow-Origin', '*')
     res.json(mainProducts)
 })
