@@ -18,6 +18,9 @@ app.get('/', (req, res)=>{
 
 app.get('/main-products', cors({origin:'*'}), (req, res)=>{
     res.set('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
     res.json(mainProducts)
 })
 
