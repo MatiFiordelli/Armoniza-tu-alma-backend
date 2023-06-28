@@ -12,7 +12,7 @@ app.get('/', (req, res)=>{
     res.send('Welcome')
 }) 
 
-app.get('/main-products', cors({origin:'*'}), (req, res)=>{
+app.get('/main-products', cors({origin:true}), (req, res)=>{
     res.json(mainProducts)
 })
 
